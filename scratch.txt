@@ -1,0 +1,22 @@
+class Student
+    $name
+    $date
+
+class Course
+    $name
+    $number
+
+student
+------------
+name | varchar
+date | varchar
+
+course
+------------
+name | varchar
+number | varchar
+
+students_courses
+------------
+student_id | int
+course_id | int
