@@ -100,13 +100,13 @@
         function addCourse($course)
         {
             $GLOBALS['DB']->exec("INSERT INTO students_courses (student_id, course_id)
-                VALUES ({$this->getId()}), {$course->getId()};");
+                VALUES ({$this->getId()}, {$course->getId()});");
         }
 
         function getCourses()
         {
             $query = $GLOBALS['DB']->query("SELECT course_id FROM students_courses
-                WHERE course_id = {$this->getId()};");
+                WHERE student_id = {$this->getId()};");
             $course_ids = $query->fetchAll(PDO::FETCH_ASSOC);
 
             $courses = array();
