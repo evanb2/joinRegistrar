@@ -162,8 +162,24 @@
             //Assert
             $this->assertEquals($test_course, $result);
         }
-        // function test_update()
-        //
+        function test_update()
+        {
+            //Arrange
+            $name = "Bob Barker";
+            $course_number = "BEER101";
+            $id = 1;
+            $test_course = new Course($name, $course_number, $id);
+            $test_course->save();
+
+            $new_name = "Jackass";
+
+            //Act
+            $test_course->update($new_name);
+
+            //Assert
+            $this->assertEquals("Jackass", $test_course->getName());
+        }
+
         // function test_delete()
         //
         // function test_addStudent()
