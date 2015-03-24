@@ -49,7 +49,7 @@
             $result = $statement->fetch(PDO::FETCH_ASSOC);
             $this->setId($result['id']);
         }
-
+        //static functions
         static function getAll()
         {
             $returned_courses = $GLOBALS['DB']->query("SELECT * FROM courses;");
@@ -62,6 +62,19 @@
                 array_push($courses, $new_course);
             }
             return $courses;
+        }
+
+        static function find($search_id)
+        {
+            $found_course = null;
+            $courses = Course::getAll();
+            foreach($courses as $course) {
+                $course_id = $course->getId();
+                if ($course_id == $search_id) {
+                    $found_course = $course;
+                }
+            }
+            return $found_course;
         }
 
         static function deleteAll()
