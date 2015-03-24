@@ -44,7 +44,8 @@
 
         function save()
         {
-            $statement = $GLOBALS['DB']->query("INSERT INTO courses (name, course_number) VALUES ('{$this->getName()}', '{$this->getCourseNumber()}') RETURNING id;");
+            $statement = $GLOBALS['DB']->query("INSERT INTO courses (name, course_number)
+                VALUES ('{$this->getName()}', '{$this->getCourseNumber()}') RETURNING id;");
             $result = $statement->fetch(PDO::FETCH_ASSOC);
             $this->setId($result['id']);
         }
