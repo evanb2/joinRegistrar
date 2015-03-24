@@ -1,16 +1,19 @@
 <?php
     class Student
     {
-        private $name;
+        private $fullname;
         private $date;
         private $id;
 
-        function __construct($name, $date, $id = null)
+        function __construct($fullname, $date, $id = null)
         {
-            $this->name = $name;
+            $this->fullname = $fullname;
             $this->date = $date;
             $this->id = $id;
         }
+
+
+        //function getCourses()
 
 
     }
