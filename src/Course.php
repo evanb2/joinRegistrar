@@ -86,18 +86,19 @@
         static function deleteAll()
         {
             $GLOBALS['DB']->exec("DELETE FROM courses *;");
+            $GLOBALS['DB']->exec("DELETE FROM students_courses *;");
         }
 
         function addStudent($student)
         {
             $GLOBALS['DB']->exec("INSERT INTO students_courses (student_id, course_id)
-                VALUES ({$this->getId()}, {$student->getId()});");
+                VALUES ({$student->getId()}, {$this->getId()});");
         }
 
         function getStudents()
         {
             $query = $GLOBALS['DB']->query("SELECT student_id FROM students_courses
-                WHERE student_id = {$this->getId()};");
+                WHERE course_id = {$this->getId()};");
             $student_ids = $query->fetchAll(PDO::FETCH_ASSOC);
 
             $students = array();
@@ -107,9 +108,9 @@
                     $returned_student = $result->fetchAll(PDO::FETCH_ASSOC);
 
                     $fullname = $returned_student[0]['fullname'];
-                    $date = $returned_student[0]['date'];
+                    $enrolldate = $returned_student[0]['enrolldate'];
                     $id = $returned_student[0]['id'];
-                    $new_student = new Student($fullname, $date, $id);
+                    $new_student = new Student($fullname, $enrolldate, $id);
                     array_push($students, $new_student);
             }
             return $students;
