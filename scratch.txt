@@ -1,17 +1,21 @@
 class Student
     $name
     $date
+    $id
 
 class Course
     $name
     $number
+    $id
 
-student
+DB = join_registrar / join_registrar_test
+
+students
 ------------
 name | varchar
-date | varchar
+date | timestamp
 
-course
+courses
 ------------
 name | varchar
 number | varchar
