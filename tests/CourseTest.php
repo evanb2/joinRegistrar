@@ -21,7 +21,7 @@
         function test_getName()
         {
             //Arrange
-            $name = "Bob Barker";
+            $name = "Learn About Beer";
             $course_number = "BEER101";
             $id = 1;
             $test_course = new Course($name, $course_number, $id);
@@ -36,7 +36,7 @@
         function test_getCourseNumber()
         {
             //Arrange
-            $name = "Bob Barker";
+            $name = "Learn About Beer";
             $course_number = "BEER101";
             $id = 1;
             $test_course = new Course($name, $course_number, $id);
@@ -51,7 +51,7 @@
         function test_getId()
         {
             //Arrange
-            $name = "Bob Barker";
+            $name = "Learn About Beer";
             $course_number = "BEER101";
             $id = 1;
             $test_course = new Course($name, $course_number, $id);
@@ -66,7 +66,7 @@
         function test_setId()
         {
             //Arrange
-            $name = "Bob Barker";
+            $name = "Learn About Beer";
             $course_number = "BEER101";
             $id = null;
             $test_course = new Course($name, $course_number, $id);
@@ -83,7 +83,7 @@
         function test_save()
         {
             //Arrange
-            $name = "Bob Barker";
+            $name = "Learn About Beer";
             $course_number = "BEER101";
             $id = 1;
             $test_course = new Course($name, $course_number, $id);
@@ -99,7 +99,7 @@
         function test_getAll()
         {
             //Arrange
-            $name = "Bob Barker";
+            $name = "Learn About Beer";
             $course_number = "BEER101";
             $id = 1;
             $test_course = new Course($name, $course_number, $id);
@@ -121,7 +121,7 @@
         function test_deleteAll()
         {
             //Arrange
-            $name = "Bob Barker";
+            $name = "Learn About Beer";
             $course_number = "BEER101";
             $id = 1;
             $test_course = new Course($name, $course_number, $id);
@@ -144,7 +144,7 @@
         function test_find()
         {
             //Arrange
-            $name = "Bob Barker";
+            $name = "Learn About Beer";
             $course_number = "BEER101";
             $id = 1;
             $test_course = new Course($name, $course_number, $id);
@@ -165,7 +165,7 @@
         function test_update()
         {
             //Arrange
-            $name = "Bob Barker";
+            $name = "Learn Abour Beer";
             $course_number = "BEER101";
             $id = 1;
             $test_course = new Course($name, $course_number, $id);
@@ -183,16 +183,16 @@
         function test_delete()
         {
             //Arrange
-            $name = "Bob Barker";
+            $name = "Learn About Beer";
             $course_number = "BEER101";
             $id = 1;
             $test_course = new Course($name, $course_number, $id);
             $test_course->save();
 
             $fullname = "Billy Madison";
-            $date = "10/03/2015";
+            $enrolldate = "10/03/2015";
             $id2 = 2;
-            $test_student = new Student($fullname, $date, $id2);
+            $test_student = new Student($fullname, $enrolldate, $id2);
             $test_student->save();
 
             //Act
@@ -206,16 +206,16 @@
         function test_addStudent()
         {
             //Arrange
-            $name = "Bob Barker";
+            $name = "Learn About Beer";
             $course_number = "BEER101";
             $id = 1;
             $test_course = new Course($name, $course_number, $id);
             $test_course->save();
 
             $fullname = "Billy Madison";
-            $date = "10/03/2015";
+            $enrolldate = "10/03/2015";
             $id2 = 2;
-            $test_student = new Student($fullname, $date, $id2);
+            $test_student = new Student($fullname, $enrolldate, $id2);
             $test_student->save();
 
             //Act
@@ -228,22 +228,22 @@
         function test_getStudents()
         {
             //Arrange
-            $name = "Bob Barker";
+            $name = "Learn About Beer";
             $course_number = "BEER101";
             $id = 1;
             $test_course = new Course($name, $course_number, $id);
             $test_course->save();
 
             $fullname = "Billy Madison";
-            $date = "10/03/2015";
+            $enrolldate = "10/03/2015";
             $id2 = 2;
-            $test_student = new Student($fullname, $date, $id2);
+            $test_student = new Student($fullname, $enrolldate, $id2);
             $test_student->save();
 
             $fullname2 = "Happy Gilmore";
-            $date2 = "10/02/1989";
+            $enrolldate2 = "10/02/1989";
             $id3 = 3;
-            $test_student2 = new Student($fullname2, $date2, $id3);
+            $test_student2 = new Student($fullname2, $enrolldate2, $id3);
             $test_student2->save();
 
             //Act
