@@ -6,7 +6,7 @@
     */
 
     require_once "src/Course.php";
-    // require_once "src/Student.php";
+    require_once "src/Student.php";
 
     $DB = new PDO('pgsql:host=localhost;dbname=join_registrar_test');
 
@@ -15,7 +15,7 @@
         protected function tearDown()
         {
             Course::deleteAll();
-            // Student::deleteAll();
+            Student::deleteAll();
         }
 
         function test_getName()
