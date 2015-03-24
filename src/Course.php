@@ -2,13 +2,13 @@
     class Course
     {
         private $name;
-        private $number;
+        private $course_number;
         private $id;
 
-        function __construct($name, $number, $id = null)
+        function __construct($name, $course_number, $id = null)
         {
             $this->name = $name;
-            $this->number = $number;
+            $this->course_number = $course_number;
             $this->id = $id;
         }
         //setters
@@ -17,9 +17,9 @@
             $this->name = (string) $new_name;
         }
 
-        function setNumber($new_number)
+        function setCourseNumber($new_course_number)
         {
-            $this->number = (string) $new_number;
+            $this->course_number = (string) $new_course_number;
         }
 
         function setId($new_id)
@@ -32,14 +32,40 @@
             return $this->name;
         }
 
-        function getNumber()
+        function getCourseNumber()
         {
-            return $this->number;
+            return $this->course_number;
         }
 
         function getId()
         {
             return $this->id;
+        }
+
+        function save()
+        {
+            $statement = $GLOBALS['DB']->query("INSERT INTO courses (name, course_number) VALUES ('{$this->getName()}', '{$this->getCourseNumber()}') RETURNING id;");
+            $result = $statement->fetch(PDO::FETCH_ASSOC);
+            $this->setId($result['id']);
+        }
+
+        static function getAll()
+        {
+            $returned_courses = $GLOBALS['DB']->query("SELECT * FROM courses;");
+            $courses = array();
+            foreach($returned_courses as $course) {
+                $name = $course['name'];
+                $course_number = $course['course_number'];
+                $id = $course['id'];
+                $new_course = new Course($name, $course_number, $id);
+                array_push($courses, $new_course);
+            }
+            return $courses;
+        }
+
+        static function deleteAll()
+        {
+            $GLOBALS['DB']->exec("DELETE FROM courses *;");
         }
 
 

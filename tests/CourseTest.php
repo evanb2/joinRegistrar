@@ -12,19 +12,19 @@
 
     class CourseTest extends PHPUnit_Framework_TestCase
     {
-        // protected function tearDown()
-        // {
-        //     Course::deleteAll();
-        //     // Student::deleteAll();
-        // }
+        protected function tearDown()
+        {
+            Course::deleteAll();
+            // Student::deleteAll();
+        }
 
         function test_getName()
         {
             //Arrange
             $name = "Bob Barker";
-            $number = "BEER101";
+            $course_number = "BEER101";
             $id = 1;
-            $test_course = new Course($name, $number, $id);
+            $test_course = new Course($name, $course_number, $id);
 
             //Act
             $result = $test_course->getName();
@@ -33,28 +33,28 @@
             $this->assertEquals($name, $result);
         }
 
-        function test_getNumber()
+        function test_getCourseNumber()
         {
             //Arrange
             $name = "Bob Barker";
-            $number = "BEER101";
+            $course_number = "BEER101";
             $id = 1;
-            $test_course = new Course($name, $number, $id);
+            $test_course = new Course($name, $course_number, $id);
 
             //Act
-            $result = $test_course->getNumber();
+            $result = $test_course->getCourseNumber();
 
             //Assert
-            $this->assertEquals($number, $result);
+            $this->assertEquals($course_number, $result);
         }
 
         function test_getId()
         {
             //Arrange
             $name = "Bob Barker";
-            $number = "BEER101";
+            $course_number = "BEER101";
             $id = 1;
-            $test_course = new Course($name, $number, $id);
+            $test_course = new Course($name, $course_number, $id);
 
             //Act
             $result = $test_course->getId();
@@ -67,9 +67,9 @@
         {
             //Arrange
             $name = "Bob Barker";
-            $number = "BEER101";
+            $course_number = "BEER101";
             $id = null;
-            $test_course = new Course($name, $number, $id);
+            $test_course = new Course($name, $course_number, $id);
 
             //Act
             $test_course->setId(2);
@@ -80,12 +80,67 @@
         }
 
 
-        // function test_save()
-        //
-        // function test_getAll()
-        //
-        // function test_deleteAll()
-        //
+        function test_save()
+        {
+            //Arrange
+            $name = "Bob Barker";
+            $course_number = "BEER101";
+            $id = 1;
+            $test_course = new Course($name, $course_number, $id);
+            $test_course->save();
+
+            //Act
+            $result = Course::getAll();
+
+            //Assert
+            $this->assertEquals($test_course, $result[0]);
+        }
+
+        function test_getAll()
+        {
+            //Arrange
+            $name = "Bob Barker";
+            $course_number = "BEER101";
+            $id = 1;
+            $test_course = new Course($name, $course_number, $id);
+            $test_course->save();
+
+            $name2 = "Happy Gilmore";
+            $course_number2 = "GOLF101";
+            $id2 = 2;
+            $test_course2 = new Course ($name2, $course_number2, $id2);
+            $test_course2->save();
+
+            //Act
+            $result = Course::getAll();
+
+            //Assert
+            $this->assertEquals([$test_course, $test_course2], $result);
+        }
+
+        function test_deleteAll()
+        {
+            //Arrange
+            $name = "Bob Barker";
+            $course_number = "BEER101";
+            $id = 1;
+            $test_course = new Course($name, $course_number, $id);
+            $test_course->save();
+
+            $name2 = "Happy Gilmore";
+            $course_number2 = "GOLF101";
+            $id2 = 2;
+            $test_course2 = new Course ($name2, $course_number2, $id2);
+            $test_course2->save();
+
+            //Act
+            Course::deleteAll();
+            $result = Course::getAll();
+
+            //Assert
+            $this->assertEquals([], $result);
+        }
+
         // function test_find()
         //
         // function test_update()
