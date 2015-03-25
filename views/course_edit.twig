@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title>University of Life Registrar</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+</head>
+<body>
+  <div class='container'>
+    <h1>Update Course: {{ course.getName }}</h1>
+
+    <form action='/courses/{{ course.getId }}' method='post'>
+      <input name='_method' type='hidden' value='patch'>
+
+      <label for='name'>Rename this Course:</label>
+      <input id='name' name='name' type='text'>
+
+      <button type='submit'>Update</button>
+    </form>
+
+    <form action='/courses/{{ course.getId }}'method='post'>
+      <input name='_method' type='hidden' value='delete'>
+      <button type='submit'>Delete this Course</button>
+    </form>
+  </div>
+</body>
+</html>

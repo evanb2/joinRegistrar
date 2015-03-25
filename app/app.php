@@ -29,7 +29,7 @@
     $app->get("/courses/{id}", function($id) use ($app) {
         $course = Course::find($id);
         return $app['twig']->render('courses.twig', array('course' => $course,
-          'students' = $course->getStudents(), 'all_students' => Student::getAll()));
+          'students' => $course->getStudents(), 'all_students' => Student::getAll()));
     });
     //READ singular student
     $app->get("/students/{id}", function($id) use ($app) {
@@ -71,7 +71,7 @@
         $course = Course::find($_POST['course_id']);
         $student = Student::find($_POST['student_id']);
         $course->addStudent($student);
-        return $app['twig']->render('course.twig' array('course' => $course, 'courses' =>
+        return $app['twig']->render('course.twig', array('course' => $course, 'courses' =>
             Course::getAll(), 'students' => $course->getStudents(), 'all_students' => Student::getAll()));
     });
 

@@ -1,30 +1,33 @@
 <html>
 <head>
   <title>University of Life Registrar</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
 </head>
 <body>
-  <h1>Students</h1>
+  <div class='container'>
+    <h1>Students</h1>
 
-  {% if students is not empty %}
-    <p>All students in Registry:</p>
-    <ul>
-      {% for student in students %}
-        <li><a href='/students/{{ student.getId }}'>{{ student.getFullname }}</a></li>
-        <li><a href='/students/{{ student.getId }}'>{{ student.getEnrollDate }}</a></li>
-      {% endfor %}
-    </ul>
-  {% endif %}
+    {% if students is not empty %}
+      <p>All students in Registry:</p>
+      <ol>
+        {% for student in students %}
+          <li><a href='/students/{{ student.getId }}/edit'>Name: {{ student.getFullname }} DOE: {{ student.getEnrollDate }}</a></li>
+        {% endfor %}
+      </ol>
+    {% endif %}
 
-  <form action='/students' method='post'>
-    <label for='fullname'>Student Name:</label>
-    <input id='fullname' name='fullname' type='text'>
+    <form action='/students' method='post'>
+      <label for='fullname'>Student Name:</label>
+      <input id='fullname' name='fullname' type='text'>
+      <label for='enrolldate'>Date of Enrollment:</label>
+      <input id='enrolldate' name='enrolldate' type='text'>
 
-    <button type='submit'>Add Student</button>
-  </form>
-  <form action='/delete_students' method='post'>
-    <button type='submit'>Delete</button>
-  </form>
-  <p><a href='/'>Home</a></p>
-
+      <button type='submit'>Add Student</button>
+    </form>
+    <form action='/delete_students' method='post'>
+      <button type='submit'>Delete</button>
+    </form>
+    <p><a href='/'>Home</a></p>
+  </div>
 </body>
 </html>
