@@ -190,7 +190,7 @@
             $test_course->save();
 
             $fullname = "Billy Madison";
-            $enrolldate = "2015-10-03 00:00:00";
+            $enrolldate = "2015-10-03";
             $id2 = 2;
             $test_student = new Student($fullname, $enrolldate, $id2);
             $test_student->save();
@@ -213,7 +213,7 @@
             $test_course->save();
 
             $fullname = "Billy Madison";
-            $enrolldate = "2015-10-03 00:00:00";
+            $enrolldate = "2015-10-03";
             $id2 = 2;
             $test_student = new Student($fullname, $enrolldate, $id2);
             $test_student->save();
@@ -235,13 +235,13 @@
             $test_course->save();
 
             $fullname = "Billy Madison";
-            $enrolldate = "2015-10-03 00:00:00";
+            $enrolldate = "2015-10-03";
             $id2 = 2;
             $test_student = new Student($fullname, $enrolldate, $id2);
             $test_student->save();
 
             $fullname2 = "Happy Gilmore";
-            $enrolldate2 = "1989-10-09 00:00:00";
+            $enrolldate2 = "1989-10-09";
             $id3 = 3;
             $test_student2 = new Student($fullname2, $enrolldate2, $id3);
             $test_student2->save();

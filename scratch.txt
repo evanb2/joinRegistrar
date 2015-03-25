@@ -13,7 +13,7 @@ DB = join_registrar / join_registrar_test
 students
 ------------
 fullname | varchar
-enrolldate | timestamp
+enrolldate | date
 
 courses
 ------------

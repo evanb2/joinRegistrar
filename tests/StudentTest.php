@@ -23,7 +23,7 @@
         {
             //Arrange
             $fullname = "Billy Madison";
-            $enrolldate = "2015-10-03 00:00:00";
+            $enrolldate = "2015-10-03";
             $id = 2;
             $test_student = new Student($fullname, $enrolldate, $id);
 
@@ -39,7 +39,7 @@
         {
             //Arrange
             $fullname = "Billy Madison";
-            $enrolldate = "2015-10-03 00:00:00";
+            $enrolldate = "2015-10-03";
             $id = 2;
             $test_student = new Student($fullname, $enrolldate, $id);
 
@@ -55,7 +55,7 @@
         {
             //Arrange
             $fullname = "Billy Madison";
-            $enrolldate = "2015-10-03 00:00:00";
+            $enrolldate = "2015-10-03";
             $id = 1;
             $test_student = new Student($fullname, $enrolldate, $id);
 
@@ -70,7 +70,7 @@
         {
             //Arrange
             $fullname = "Billy Madison";
-            $enrolldate = "2015-10-03 00:00:00";
+            $enrolldate = "2015-10-03";
             $id = 2;
             $test_student = new Student($fullname, $enrolldate, $id);
             $test_student->save();
@@ -87,7 +87,7 @@
         {
             //Arrange
             $fullname = "Billy Madison";
-            $enrolldate = "2015-10-03 00:00:00";
+            $enrolldate = "2015-10-03";
             $id = 2;
             $test_student = new Student($fullname, $enrolldate, $id);
 
@@ -102,7 +102,7 @@
         {
             //Arrange
             $fullname = "Billy Madison";
-            $enrolldate = "2015-10-03 00:00:00";
+            $enrolldate = "2015-10-03";
             $id = 2;
             $test_student = new Student($fullname, $enrolldate, $id);
 
@@ -118,13 +118,13 @@
         {
             //Arrange
             $fullname = "Billy Madison";
-            $enrolldate = "2015-10-03 00:00:00";
+            $enrolldate = "2015-10-03";
             $id = 2;
             $test_student = new Student($fullname, $enrolldate, $id);
             $test_student->save();
 
             $fullname2 = "Happy Gilmore";
-            $enrolldate2 = "1989-10-09 00:00:00";
+            $enrolldate2 = "1989-10-09";
             $id2 = 3;
             $test_student2 = new Student($fullname2, $enrolldate2, $id2);
             $test_student2->save();
@@ -140,13 +140,13 @@
         {
             //Arrange
             $fullname = "Billy Madison";
-            $enrolldate = "2015-10-03 00:00:00";
+            $enrolldate = "2015-10-03";
             $id = 2;
             $test_student = new Student($fullname, $enrolldate, $id);
             $test_student->save();
 
             $fullname2 = "Happy Gilmore";
-            $enrolldate2 = "1989-10-09 00:00:00";
+            $enrolldate2 = "1989-10-09";
             $id2 = 3;
             $test_student2 = new Student($fullname2, $enrolldate2, $id2);
             $test_student2->save();
@@ -163,13 +163,13 @@
         {
             //Arrange
             $fullname = "Billy Madison";
-            $enrolldate = "2015-10-03 00:00:00";
+            $enrolldate = "2015-10-03";
             $id = 2;
             $test_student = new Student($fullname, $enrolldate, $id);
             $test_student->save();
 
             $fullname2 = "Happy Gilmore";
-            $enrolldate2 = "1989-10-09 00:00:00";
+            $enrolldate2 = "1989-10-09";
             $id2 = 3;
             $test_student2 = new Student($fullname2, $enrolldate2, $id2);
             $test_student2->save();
@@ -185,7 +185,7 @@
         {
             //Arrange
             $fullname = "Billy Madison";
-            $enrolldate = "2015-10-03 00:00:00";
+            $enrolldate = "2015-10-03";
             $id = 2;
             $test_student = new Student($fullname, $enrolldate, $id);
             $test_student->save();
@@ -203,7 +203,7 @@
         {
             //Arrange
             $fullname = "Billy Madison";
-            $enrolldate = "2015-10-03 00:00:00";
+            $enrolldate = "2015-10-03";
             $id = 2;
             $test_student = new Student($fullname, $enrolldate, $id);
             $test_student->save();
@@ -226,7 +226,7 @@
         {
             //Arrange
             $fullname = "Billy Madison";
-            $enrolldate = "2015-10-03 00:00:00";
+            $enrolldate = "2015-10-03";
             $id = 2;
             $test_student = new Student($fullname, $enrolldate, $id);
             $test_student->save();
@@ -260,7 +260,7 @@
             $test_course2->save();
 
             $fullname = "Billy Madison";
-            $enrolldate = "2015-10-03 00:00:00";
+            $enrolldate = "2015-10-03";
             $id3 = 3;
             $test_student = new Student($fullname, $enrolldate, $id3);
             $test_student->save();
