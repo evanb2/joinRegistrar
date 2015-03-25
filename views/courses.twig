@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title>University of Life Registrar</title>
+</head>
+<body>
+
+  {% if courses is not empty %}
+    <p>All available courses:</p>
+    <ul>
+      {% for course in courses %}
+        <li><a href="/courses/{{ course.getId }}">{{ course.getName }}</a></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <form action='/courses' method='post'>
+    <label for='name'>Course Name:</label>
+    <input id='name' name='name' type='text'>
+
+    <button type='submit'>Add Course to Registry</button>
+  </form>
+  <form action='/delete_courses' method='post'>
+    <button type='submit'>Remove Course from Registry</button>
+  </form>
+
+  <p><a href='/'>Home</a></p>
+
+</body>
+</html>
