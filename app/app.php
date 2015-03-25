@@ -28,13 +28,13 @@
     //READ singular course
     $app->get("/courses/{id}", function($id) use ($app) {
         $course = Course::find($id);
-        return $app['twig']->render('courses.twig', array('course' => $course,
+        return $app['twig']->render('course.twig', array('course' => $course,
           'students' => $course->getStudents(), 'all_students' => Student::getAll()));
     });
     //READ singular student
     $app->get("/students/{id}", function($id) use ($app) {
         $student = Student::find($id);
-        return $app['twig']->render('students.twig', array('student' => $student,
+        return $app['twig']->render('student.twig', array('student' => $student,
           'courses' => $student->getCourses(), 'all_courses' => Course::getAll()));
     });
     //READ edit forms
@@ -45,7 +45,7 @@
 
     $app->get("/students/{id}/edit", function($id) use ($app) {
         $student = Student::find($id);
-        return $app['twig']->render('students_edit.twig', array('student' => $student));
+        return $app['twig']->render('student_edit.twig', array('student' => $student));
     });
 
     //CREATE course
@@ -113,7 +113,7 @@
     //PATCH routes
     $app->patch("/courses/{id}", function($id) use ($app) {
       $name = $_POST['name'];
-      $course = Category::find($id);
+      $course = Course::find($id);
       $course->update($name);
       return $app['twig']->render('course.twig', array('course' => $course, 'students' => $course->getStudents(), 'all_students' => Student::getAll()));
     });

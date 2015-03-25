@@ -11,7 +11,7 @@
       <p>All students in Registry:</p>
       <ol>
         {% for student in students %}
-          <li><a href='/students/{{ student.getId }}/edit'>Name: {{ student.getFullname }} DOE: {{ student.getEnrollDate }}</a></li>
+          <li><a href='/students/{{ student.getId }}'>Name: {{ student.getFullname }} DOE: {{ student.getEnrollDate }}</a></li>
         {% endfor %}
       </ol>
     {% endif %}

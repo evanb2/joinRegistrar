@@ -10,7 +10,7 @@
       <p>All available courses:</p>
       <ul>
         {% for course in courses %}
-          <li><a href="/courses/{{ course.getId }}/edit">{{ course.getName }}</a></li>
+          <li><a href="/courses/{{ course.getId }}">{{ course.getName }}</a></li>
         {% endfor %}
       </ul>
     {% endif %}
